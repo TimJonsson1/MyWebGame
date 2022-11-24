@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fish Game </title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+
+
+</head>
+
+<body>
+
+
+
+    <div class="foreground">
+
+        <head>
+            <h1 id="fishCounter">0</h1>
+        </head>
+    </div>
+
+    <div  class="popup">
+        <span class="popuptext" id="pointsPopUp">fish</span>
+    </div>
+
+
+
+    <style class="bgImage">
+        body {
+            background-image: url("Graphics/bg.png");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+    </style>
+    <img class="waterImage" id="water" onclick="goFish()"  src="Graphics/water.png" alt="water">
+    <img class="cliffImage" src="Graphics/cliff.png" alt="cliff">
+    <img class="character" src="Graphics/Character.png" alt="Character">
+
+</body>
+
+
+
+</html>
