@@ -9,37 +9,81 @@
     <link rel="stylesheet" href="index.css">
     <script src="index.js"></script>
 
+    <h1 id="fishCounter">0</h1>
 
+    
+    
 </head>
+
+
 
 <body>
 
-
-
-    <div class="foreground">
-
-        <head>
-            <h1 id="fishCounter">0</h1>
-        </head>
-    </div>
-
-    <div  class="popup">
-        <span class="popuptext" id="pointsPopUp">fish</span>
-    </div>
-
-
-
-    <style class="bgImage">
-        body {
-            background-image: url("Graphics/bg.png");
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: 100% 100%;
-        }
+    <style>
+        
     </style>
-    <img class="waterImage" id="water" onclick="goFish()"  src="Graphics/water.png" alt="water">
-    <img class="cliffImage" src="Graphics/cliff.png" alt="cliff">
-    <img class="character" src="Graphics/Character.png" alt="Character">
+    <div class="flexcontainer">
+
+        <style>
+            div{
+                overflow: scroll;
+                overflow-y: hidden;
+            }
+        </style>
+
+        <div class="main">
+            <style>
+                div{
+                    overflow-x: hidden;
+                    overflow-y: scroll;
+                }
+            </style>
+
+            <img class="bgImage" onclick="goFish()" src="Graphics/scrollbackground.png" alt="scrollbackground" width="100%" >
+            <img class="waterImage" id="water" onclick="goFish()" src="Graphics/water.png" alt="water" width="100%">
+            <!-- <img class="cliffImage" src="Graphics/cliff.png" alt="cliff" width="100%"> -->
+            <img class="character" src="Graphics/Character.png" alt="Character" width="10%" height="20%">
+
+        </div>
+
+        <div class="rightside">
+            <head>
+                <div class="uppgradeGrid" >
+                    <!-- <img class="gridItem" src="Graphics/Fish1.png" alt="fish1">
+                    <img class="gridItem" src="Graphics/Fish1.png" alt="fish1"> -->
+                </div>
+                <h1 id="fps">description</h1>
+            </head>
+            <style>
+                div{
+                    overflow-x: hidden;
+                    overflow-y: scroll;
+                }
+            </style>
+
+            <button id="uppgradebtn" class="uppgradebtn" onclick="uppgrade()">
+                 <h2 id="uppgradebtnDescription" class="uppgradebtnDescription">cost 5 for + 1 Fish</h2> 
+            </button>
+
+            <button id="uppgradebtn2" class="uppgradebtn" onclick="uppgradePlusTen()">
+                <h2 id="uppgradebtnDescription2" class="uppgradebtnDescription">cost 10 for + 5 Fish</h2> 
+           </button>
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <!-- <img class="bgImage" id="background" src="Graphics/bg.png" alt="background">
+        <img class="waterImage" id="water" onclick="goFish()"  src="Graphics/water.png" alt="water">
+        <img class="cliffImage" src="Graphics/cliff.png" alt="cliff">
+        <img class="character" src="Graphics/Character.png" alt="Character"> -->
+
 
 </body>
 

@@ -1,14 +1,17 @@
 
 var fishTotal = 0;
 var multiplier = 1;
+var fishPerSecond = 1;
 
-window.setInterval(automaticFishing,1000)
+var uppgradeCostOneFish = 5; 
+var uppgradeCostFiveFish = 10; 
+
+window.setInterval(automaticFishing,600)
+
 
 function goFish(){
-    fishTotal++;
+    fishTotal ++;
     document.getElementById('fishCounter').innerText = fishTotal;
-    document.getElementById('pointsPopUp').classList.toggle("show");
-    
     
 
 
@@ -17,13 +20,40 @@ function goFish(){
 function automaticFishing(){
     
     // document.getElementById('water').click();
-    fishTotal++;
+    fishTotal += multiplier;
     document.getElementById('fishCounter').innerText = fishTotal;
-
+    getfps();
 }
 
-function popUpFunction(){
-    var popup = document.getElementById('pointsPopUp');
-    popup.classList.toggle("show");
-    
+function uppgrade(){
+    if(fishTotal > uppgradeCostOneFish){
+        fishPerSecond += 1
+        multiplierFormula(1);
+        fishTotal = fishTotal - uppgradeCostOneFish;
+        uppgradeCostOneFish += uppgradeCostOneFish;
+    }
+    document.getElementById('uppgradebtnDescription').innerText = "cost " + uppgradeCostOneFish + " + 1 Fish"
+   
 }
+
+function uppgradePlusTen(){
+    if(fishTotal > uppgradeCostFiveFish){
+        fishPerSecond += 5
+        multiplierFormula(5)
+        fishTotal = fishTotal - uppgradeCostFiveFish;
+        uppgradeCostFiveFish += uppgradeCostFiveFish;
+        document.getElementById('uppgradebtnDescription2').innerText = "cost " + uppgradeCostFiveFish + " + 5 Fish"
+    }
+   
+}
+
+function getfps(){
+
+    document.getElementById('fps').innerText = fishPerSecond
+}
+
+function multiplierFormula(input){
+    multiplier = multiplier + input
+}
+
+
